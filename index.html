@@ -33,7 +33,7 @@
                     <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-location-arrow"> Contact</span></a></li>
                 </ul>
 
-                <!-- Appearing the modal-->
+                <!-- Appearing the login modal-->
                 <span class="navbar-text">
                     <a data-toggle="modal" data-target="#loginModal">
                         <span class="fa fa-sign-in"></span> Login
@@ -45,7 +45,7 @@
 
     <div class="modal fade" id="loginModal" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
-            <!-- Modal content -->
+            <!-- Login modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button class="btn btn-danger btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
                             <button class="btn btn-primary btn-sm ml-1" type="submit">Sign in</button>
                         </div>
                     </form>
@@ -89,10 +89,9 @@
                 <div class="col-6 col-sm align-self-center">
                     <img src="img/logo.png" class="img-fluid">
                 </div>
+                <!-- Reserve Table Modal -->
                 <div class="col-6 col-sm align-self-center">
-                    <a class="btn btn-block nav-link btn-success" role="button" href="#reserveTable"
-                    data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+62 01234567890</strong>"
-                    data-placement="bottom">Reserve Table</a>
+                    <a class="btn btn-block nav-link btn-success text-white" role="button" data-target="#reserveTable" data-toggle="modal">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -210,13 +209,19 @@
             </div>
         </div>
 
-        <!--This is the Reserve Form-->
-        <div class="row row-content justify-content-center">
-            <div class="col-12 col-md-8">
-                <div class="card">
-                    <h3 class="card-header bg-success text-white"  id="reserveTable">Reserve a Table</h3>
-                    <div class="card-body">
-                        <form>
+        <!-- Reserve Form Modal -->
+        <div class="modal fade" id="reserveTable" role="dialog" tabindex="-1" aria-labelledby="reserveTableModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary">
+                        <h5 class="modal-title text-white" id="reserveModalTitle">Reserve a Table</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="reserveTableForm">
+                            <!-- Number of Guests-->
                             <div class="form-group row">
                                 <label class="col-lg-2 col-form-label" for="numguests">Number of Guests</label>
                                 <div class="col-md-10">
@@ -246,17 +251,34 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Smoking Section -->
+                            <div class="form-group row">
+                                <label class="col-lg-2 col-form-label" for="smokingSection">Section</label>
+                                <div class="col-12 col-lg-6">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-success active">
+                                            <input type="radio" name="Non-Smoking" id="nonSmoking" autocomplete="off" checked>Non-Smoking
+                                        </label>
+                                        <label class="btn btn-danger">
+                                            <input type="radio" name="Smoking" id="smoking" autocomplete="off">Smoking
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Date and Time -->
                             <div class="form-group row">
                                 <label class="col-lg-2 col-form-label" for="dateAndTime">Date and Time</label>
-                                <div class="col-12 col-md-4">
+                                <div class="col-12 col-lg-4 col-md-6">
                                     <input class="form-control" type="date" id="dateReserve" name="dateReserve" placeholder="Date">
                                 </div>
-                                <div class="col-12 col-md-3">
+                                <div class="col-12 col-lg-3 col-md-5">
                                     <input class="form-control" type="time" id="timeReserve" name="timeReserve" placeholder="Time">
                                 </div>
                             </div>
+                            <!-- Button -->
                             <div class="form-group row">
-                                <div class="col-auto offset-md-2">
+                                <div class="col-auto offset-lg-2">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
                                     <button class="btn btn-primary" type="submit">Reserve</button>
                                 </div>
                             </div>
@@ -312,11 +334,6 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>    // Tooltip on ReserveTable btn
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 </body>
 
 </html>
