@@ -50,7 +50,7 @@ body {
     min-height: 300px;
 }
 
-#playPauseCarousel {
+#carouselBtnControl {
     position: absolute;
     right: 0;
     bottom: 0px;
