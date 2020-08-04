@@ -5,6 +5,15 @@
 .navbar-dark {
   background-color: #001f3f; }
 
+.modal-header {
+  background-color: #007bff;
+  color: #fff; }
+  .modal-header .close {
+    color: #fff; }
+
+.modal-body {
+  background-color: #fff; }
+
 .jumbotron {
   margin: 0px auto;
   padding: 70px 30px;
@@ -47,7 +56,7 @@ body {
   margin: 0px auto;
   padding: 20px 0px;
   background-color: #001f3f;
-  color: #ddd; }
+  color: #fff; }
 
 address {
   font-size: 85%;
