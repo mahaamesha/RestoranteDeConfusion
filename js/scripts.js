@@ -13,7 +13,7 @@ $(document).ready(function(){
             $('#carouselBtnControl').children('span').addClass('fa-pause');
         }
     });
-    
+
     // Activate modal button
     $('#reserveTableBtn').click(function(){
         $('#reserveTable').modal('toggle');
