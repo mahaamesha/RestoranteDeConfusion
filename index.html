@@ -35,7 +35,7 @@
 
                 <!-- Appearing the login modal-->
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginModalBtn">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -91,7 +91,7 @@
                 </div>
                 <!-- Reserve Table Modal -->
                 <div class="col-6 col-sm align-self-center">
-                    <a class="btn btn-block nav-link btn-success text-white" role="button" data-target="#reserveTable" data-toggle="modal">Reserve Table</a>
+                    <a class="btn btn-block nav-link btn-success text-white" role="button" id="reserveTableBtn">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -217,8 +217,8 @@
         <div class="modal fade" id="reserveTable" role="dialog" tabindex="-1" aria-labelledby="reserveTableModal" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header bg-primary">
-                        <h5 class="modal-title text-white" id="reserveModalTitle">Reserve a Table</h5>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reserveModalTitle">Reserve a Table</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -338,6 +338,16 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>    // Activate modal #reserveTable
+        $('#reserveTableBtn').click(function(){
+            $('#reserveTable').modal('toggle');
+        });
+    </script>
+    <script>    // Activate modal #loginModal
+        $('#loginModalBtn').click(function(){
+            $('#loginModal').modal('toggle');
+        });
+    </script>
     <script>    // Activate #playPauseCarousel
         $(document).ready(function(){
             $('#indexCarousel').carousel({ interval: 3000 });
